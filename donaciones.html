@@ -1,16 +1,69 @@
 <!-- donaciones.html -->
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Donaciones</title>
+  <meta charset="UTF-8">
+  <title>Donaciones - Fundación</title>
+  <style>
+    /* 🎨 Estilos básicos para mejorar la presentación */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background: #fff;
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, select, button {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #218838;
+    }
+  </style>
 </head>
 <body>
-  <h1>Apoya nuestra causa</h1>
-  <p>Tu contribución ayuda a continuar con nuestros programas.</p>
-  <form>
-    <label>Monto a donar:</label>
-    <input type="number" name="monto">
-    <button type="submit">Donar</button>
-  </form>
+
+  <div class="container">
+    <!-- 🏷️ Encabezado de la página -->
+    <h1>Apoya nuestra causa</h1>
+    <p>Tu contribución nos ayuda a seguir con nuestros programas.</p>
+
+    <!-- 📌 Formulario con selector de moneda -->
+    <form action="procesar_donacion.php" method="POST">
+      
+      <!-- 💵 Campo para ingresar monto -->
+      <label for="monto">Monto a donar:</label>
+      <input type="number" name="monto" id="monto" min="1" required>
+
+      <!-- 🌍 Selector de moneda -->
+      <label for="moneda">Selecciona la moneda:</label>
+      <select name="moneda" id="moneda" required>
+        <option value="USD">USD - Dólares</option>
+        <option value="EUR">EUR - Euros</option>
+        <option value="CLP">CLP - Pesos Chilenos</option>
+      </select>
+
+      <!-- Botón de envío -->
+      <button type="submit">Donar</button>
+    </form>
+  </div>
+
 </body>
 </html>
